@@ -1,1 +1,1 @@
-# Welcome to Shoppa-UI ✨
+# Welcome to Yasa ✨
