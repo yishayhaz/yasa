@@ -1,0 +1,95 @@
+$fs-xxl: var(--fs-xxl);
+$fs-xl: var(--fs-xl);
+$fs-l: var(--fs-l);
+$fs-ml: var(--fs-ml);
+$fs-m: var(--fs-m);
+$fs-ms: var(--fs-ms);
+$fs-normal: var(--fs-normal);
+$fs-s: var(--fs-s);
+$fs-xs: var(--fs-xs);
+$fs-xxs: var(--fs-xxs);
+
+$fs: (
+  "xxl": $fs-xxl,
+  "xl": $fs-xl,
+  "l": $fs-l,
+  "ml": $fs-ml,
+  "m": $fs-m,
+  "ms": $fs-ms,
+  "normal": $fs-normal,
+  "s": $fs-s,
+  "xs": $fs-xs,
+  "xxs": $fs-xxs,
+);
+
+$fw-100: var(--fw-100);
+$fw-200: var(--fw-200);
+$fw-300: var(--fw-300);
+$fw-400: var(--fw-400);
+$fw-500: var(--fw-500);
+$fw-600: var(--fw-600);
+$fw-700: var(--fw-700);
+$fw-800: var(--fw-800);
+$fw-900: var(--fw-900);
+$fw-light: var(--fw-light);
+$fw-lighter: var(--fw-lighter);
+$fw-normal: var(--fw-normal);
+$fw-bold: var(--fw-bold);
+$fw-bolder: var(--fw-bolder);
+
+$fw: (
+  "100": var(--fw-100),
+  "200": var(--fw-200),
+  "300": var(--fw-300),
+  "400": var(--fw-400),
+  "500": var(--fw-500),
+  "600": var(--fw-600),
+  "700": var(--fw-700),
+  "800": var(--fw-800),
+  "900": var(--fw-900),
+  "light": var(--fw-light),
+  "lighter": var(--fw-lighter),
+  "normal": var(--fw-normal),
+  "bold": var(--fw-bold),
+  "bolder": var(--fw-bolder),
+);
+
+@mixin typography() {
+  --fs-xxl: 4rem;
+  --fs-xl: 3rem;
+  --fs-l: 2.5rem;
+  --fs-ml: 1.75rem;
+  --fs-m: 1.5rem;
+  --fs-ms: 1.25rem;
+  --fs-normal: 1rem;
+  --fs-s: 0.825rem;
+  --fs-xs: 0.75rem;
+  --fs-xxs: 0.6rem;
+
+  --fw-100: 100;
+  --fw-200: 200;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-800: 800;
+  --fw-900: 900;
+  --fw-light: 300;
+  --fw-lighter: lighter;
+  --fw-normal: normal;
+  --fw-bold: bold;
+  --fw-bolder: bolder;
+
+  @each $key, $value in $fs {
+    .fs-#{$key} {
+      font-size: $value;
+    }
+  }
+
+  @each $key, $value in $fw {
+    .fw-#{$key} {
+      font-weight: $value;
+    }
+  }
+}
