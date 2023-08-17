@@ -59,6 +59,10 @@ const COMPONENTS: Link[] = [
 
 const COOL: Link[] = [
   {
+    title: "Overview 🔍",
+    path: "/docs/cool/overview",
+  },
+  {
     title: "Form",
     path: "/docs/cool/form",
   },

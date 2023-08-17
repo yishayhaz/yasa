@@ -5,16 +5,22 @@ import {
   Outlet,
   Navigate,
 } from "react-router-dom";
-import { ColorsScreen } from "../screens/colors";
+import { ColorsScreen } from "../screens/general/colors";
 import { Layout } from "../layout";
-import { TypographyScreen } from "../screens/typography";
+import { TypographyScreen } from "../screens/general/typography";
 import { HomeScreen } from "../screens/home";
-import { AlertScreen } from "../screens/alert";
-import { BadgeScreen } from "../screens/badge";
-import { ButtonScreen } from "../screens/button";
-import { FieldsScreen } from "../screens/fields";
-import { FiltersScreen } from "../screens/filters";
-import { FormScreen } from "../screens/form";
+import { AlertScreen } from "../screens/components/alert";
+import { BadgeScreen } from "../screens/components/badge";
+import { ButtonScreen } from "../screens/components/button";
+import { FieldsScreen } from "../screens/components/fields";
+import { FiltersScreen } from "../screens/cool/filters";
+import { FormScreen } from "../screens/cool/form";
+import { SetupScreen } from "../screens/getting_started/setup";
+import { InstallationScreen } from "../screens/getting_started/installation";
+import { GettingStartedOverviewScreen } from "../screens/getting_started/overview";
+import { GeneralOverviewScreen } from "../screens/general/overview";
+import { ComponentsOverviewScreen } from "../screens/components/overview";
+import { CoolOverviewScreen } from "../screens/cool/overview";
 
 export function Navigation() {
   return (
@@ -23,17 +29,19 @@ export function Navigation() {
         <Route path="/" element={<HomeScreen />} />
         <Route path="/docs" element={<Layout />}>
           <Route path="getting-started" element={<Outlet />}>
-            <Route path="overview" element={<HomeScreen />} />
+            <Route path="overview" element={<GettingStartedOverviewScreen />} />
+            <Route path="installation" element={<InstallationScreen />} />
+            <Route path="setup" element={<SetupScreen />} />
             <Route path="*" element={<Navigate to="overview" />} />
           </Route>
           <Route path="general" element={<Outlet />}>
-            <Route path="overview" element={<HomeScreen />} />
+            <Route path="overview" element={<GeneralOverviewScreen />} />
             <Route path="colors" element={<ColorsScreen />} />
             <Route path="typography" element={<TypographyScreen />} />
             <Route path="*" element={<Navigate to="overview" />} />
           </Route>
           <Route path="components" element={<Outlet />}>
-            <Route path="overview" element={<HomeScreen />} />
+            <Route path="overview" element={<ComponentsOverviewScreen />} />
             <Route path="alert" element={<AlertScreen />} />
             <Route path="badge" element={<BadgeScreen />} />
             <Route path="button" element={<ButtonScreen />} />
@@ -41,7 +49,7 @@ export function Navigation() {
             <Route path="*" element={<Navigate to="overview" />} />
           </Route>
           <Route path="cool" element={<Outlet />}>
-            <Route path="overview" element={<HomeScreen />} />
+            <Route path="overview" element={<CoolOverviewScreen />} />
             <Route path="filters" element={<FiltersScreen />} />
             <Route path="form" element={<FormScreen />} />
           </Route>
