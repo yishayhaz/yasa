@@ -32,6 +32,18 @@ const GENERAL: Link[] = [
     title: "Typography",
     path: "/docs/general/typography",
   },
+  {
+    title: "Spacing",
+    path: "/docs/general/spacing",
+  },
+  {
+    title: "Layout",
+    path: "/docs/general/layout",
+  },
+  {
+    title: "Breakpoints",
+    path: "/docs/general/breakpoints",
+  },
 ];
 
 const COMPONENTS: Link[] = [

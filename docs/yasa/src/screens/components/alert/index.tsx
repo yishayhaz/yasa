@@ -89,10 +89,16 @@ export function AlertScreen() {
         </p>
       </div>
       <Alert size="lg" variant="primary" icon={<FaRegThumbsUp />}>
-        <span className="fs-l fw-bold py-10">
+        <span className="fs-l fw-bold">
           I'm a custom, I can do whatever I want.
         </span>
-        <hr />
+        <hr className="my-10" />
+        <p className="fs-normal">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla
+          exercitationem impedit quod accusantium? Quae, aliquam corporis
+          assumenda exercitationem illum voluptas et! Fugiat, inventore nisi.
+          Iste facere voluptate neque delectus accusamus.
+        </p>
       </Alert>
     </>
   );

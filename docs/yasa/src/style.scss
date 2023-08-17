@@ -23,3 +23,10 @@ select {
   --header-height: 4rem;
   --sidebar-width: 300px;
 }
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+}

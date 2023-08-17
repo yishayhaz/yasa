@@ -6,24 +6,24 @@
   @include spacing;
 }
 
-body[data-theme="light"] {
+.app body[data-theme="light"] {
   @include light-theme;
   color-scheme: light;
 }
 
-body[data-theme="dark"] {
+.app body[data-theme="dark"] {
   @include dark-theme;
   color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
-  body:not([data-theme]) {
+  .app body:not([data-theme]) {
     @include dark-theme;
   }
 }
 
 @media (prefers-color-scheme: light) {
-  body:not([data-theme]) {
+  .app body:not([data-theme]) {
     @include light-theme;
   }
 }

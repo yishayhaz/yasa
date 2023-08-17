@@ -1,7 +1,13 @@
 import { useState } from "react";
-import { Form, FormErrors, FormFields, FormOnSubmit } from "@yasa/form";
+import { Form } from "@yasa/form";
+import { CodeBlock } from "docs/yasa/src/common/code_block";
 
-export function FormScreen() {
+const scope = {
+  useState,
+  Form,
+};
+
+const code = `function FormScreen() {
   const [fields, setFields] = useState<FormFields>({
     status: {
       as: "select",
@@ -103,7 +109,6 @@ export function FormScreen() {
 
   return (
     <>
-      <h1>Form</h1>
       <Form
         className="d-flex gap-12 flex-column align-items-stretch"
         fields={fields}
@@ -112,6 +117,23 @@ export function FormScreen() {
         errors={formErrors}
         setErrors={setFormErrors}
       />
+    </>
+  );
+}`;
+
+export function FormScreen() {
+  return (
+    <>
+      <div>
+        <h1>Form</h1>
+        <p>
+          Form is a component that helps you to create a form with validation,
+          error handling, and editing state.
+        </p>
+      </div>
+      <h2>Example</h2>
+      <CodeBlock code={code} scope={scope} />
+      <h2>API</h2>
     </>
   );
 }

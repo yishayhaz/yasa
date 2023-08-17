@@ -22,21 +22,35 @@ const WEIGHTS = [
 export function TypographyScreen() {
   return (
     <>
-      <h2>Font Size</h2>
-      <div className="d-flex align-items-start flex-column">
-        {SIZES.map((size) => (
-          <span className={`fs-${size}`} key={size}>
-            hey, I'm fs-{size}
-          </span>
-        ))}
+      <div className="d-flex align-items-start flex-column gap-20">
+        <h2>Font Size</h2>
+        <p>
+          All font sizes are accessible via variaty of method, with classes,
+          sass variables, or css variables.
+        </p>
+        <pre>--fs-*, $fs-*, .fs-*</pre>
+        <div className="d-flex align-items-start flex-column">
+          {SIZES.map((size) => (
+            <span className={`fs-${size}`} key={size}>
+              hey, I'm fs-{size}
+            </span>
+          ))}
+        </div>
       </div>
-      <h2>Font Weight</h2>
-      <div className="d-flex align-items-start flex-column">
-        {WEIGHTS.map((weight) => (
-          <span className={`fw-${weight} fs-ml`} key={weight}>
-            hey, I'm fw-{weight}
-          </span>
-        ))}
+      <div className="d-flex align-items-start flex-column gap-20">
+        <h2>Font Weight</h2>
+        <p>
+          Same as sizes, all font weights are accessible via variaty of method,
+          with classes, sass variables, or css variables.
+        </p>
+        <pre>--fw-*, $fw-*, .fw-*</pre>
+        <div className="d-flex align-items-start flex-column">
+          {WEIGHTS.map((weight) => (
+            <span className={`fw-${weight} fs-ml`} key={weight}>
+              hey, I'm fw-{weight}
+            </span>
+          ))}
+        </div>
       </div>
     </>
   );

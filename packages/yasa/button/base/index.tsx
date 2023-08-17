@@ -15,8 +15,8 @@ export function BaseButton({ className, ...rest }: BaseButtonProps) {
     return (
       <Link
         className={`${styles.baseButton} ${className || ""}`}
-        extraProps={link}
         {...restProps}
+        {...link}
       />
     );
   }
