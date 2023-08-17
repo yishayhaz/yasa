@@ -19,9 +19,10 @@ export function SetupScreen() {
           This will load all the css rules into your project.
         </p>
         <CodeBlock
-          code={`@import "yasa/styles/_index.scss";`}
+          code={`@import "yasa-ui/styles/_index.scss";`}
           disabled
           noPreview
+          language="css"
         />
         <p>
           If you're familiar with design systems, you probably have already came
@@ -33,9 +34,10 @@ export function SetupScreen() {
           You can use this folder in your own sass files, like so:
         </p>
         <CodeBlock
-          code={`@use "~yasa/styles/abstracts" as *;`}
+          code={`@use "~yasa-ui/styles/abstracts" as *;`}
           disabled
           noPreview
+          language="css"
         />
         <p>
           Or even better, you can inject it into your sass compiler, so you can
@@ -46,12 +48,13 @@ export function SetupScreen() {
         <CodeBlock
           disabled
           noPreview
+          language="javascript"
           code={JSON.stringify(
             {
               css: {
                 preprocessorOptions: {
                   scss: {
-                    additionalData: "@use `~yasa/styles/abstracts` as *;",
+                    additionalData: "@use `~yasa-ui/styles/abstracts` as *;",
                   },
                 },
               },

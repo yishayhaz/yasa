@@ -1,31 +1,13 @@
-import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./style.module.scss";
 import { IconButton } from "@yasa/button";
 import { FiSun, FiMoon } from "react-icons/fi";
 import { BsGithub } from "react-icons/bs";
+import { useTheme } from "../providers/theme";
 
 export function Header() {
   const location = useLocation();
-
-  const [theme, setTheme] = React.useState<"light" | "dark">("light");
-
-  const switchTheme = (theme: "light" | "dark") => {
-    localStorage.setItem("theme", theme);
-    setTheme(theme);
-  };
-
-  useEffect(() => {
-    const theme = localStorage.getItem("theme") as string;
-
-    if (["light", "dark"].includes(theme)) {
-      setTheme(theme as "light" | "dark");
-    }
-  }, []);
-
-  useEffect(() => {
-    document.body.dataset.theme = theme;
-  }, [theme]);
+  const theme = useTheme();
 
   return (
     <header className={styles.header}>
@@ -65,10 +47,12 @@ export function Header() {
         <IconButton
           variant="link"
           label="theme"
-          onClick={() => switchTheme(theme === "light" ? "dark" : "light")}
+          onClick={() =>
+            theme.setTheme(theme.theme === "light" ? "dark" : "light")
+          }
           size="sm"
         >
-          {theme === "light" ? <FiMoon /> : <FiSun />}
+          {theme.theme === "light" ? <FiMoon /> : <FiSun />}
         </IconButton>
       </div>
     </header>

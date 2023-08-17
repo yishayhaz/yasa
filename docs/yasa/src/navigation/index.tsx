@@ -21,6 +21,7 @@ import { GettingStartedOverviewScreen } from "../screens/getting_started/overvie
 import { GeneralOverviewScreen } from "../screens/general/overview";
 import { ComponentsOverviewScreen } from "../screens/components/overview";
 import { CoolOverviewScreen } from "../screens/cool/overview";
+import { SpacingScreen } from "../screens/general/spacing";
 
 export function Navigation() {
   return (
@@ -38,6 +39,7 @@ export function Navigation() {
             <Route path="overview" element={<GeneralOverviewScreen />} />
             <Route path="colors" element={<ColorsScreen />} />
             <Route path="typography" element={<TypographyScreen />} />
+            <Route path="spacing" element={<SpacingScreen />} />
             <Route path="*" element={<Navigate to="overview" />} />
           </Route>
           <Route path="components" element={<Outlet />}>

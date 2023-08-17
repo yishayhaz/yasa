@@ -1,5 +1,10 @@
 import { Navigation } from "./navigation";
+import { ThemeProvider } from "./providers/theme";
 
 export function App() {
-  return <Navigation />;
+  return (
+    <ThemeProvider>
+      <Navigation />
+    </ThemeProvider>
+  );
 }
