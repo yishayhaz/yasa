@@ -20,7 +20,8 @@
     color: $neutral-400;
     text-decoration: none;
 
-    &:hover {
+    &:hover,
+    &[aria-current="page"] {
       color: $neutral-100;
     }
   }

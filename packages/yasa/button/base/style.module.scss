@@ -1,0 +1,33 @@
+.baseButton {
+  &[data-variant="primary"] {
+    --p-accent: var(--primary);
+  }
+  &[data-variant="neutral"] {
+    --p-accent: var(--neutral-300);
+    --p-text-accent: rgb(var(--neutral-text));
+  }
+  &[data-variant="success"] {
+    --p-accent: var(--success);
+  }
+  &[data-variant="danger"] {
+    --p-accent: var(--danger);
+  }
+  &[data-variant="warning"] {
+    --p-accent: var(--warning);
+    --p-text-accent: rgb(var(--neutral-text));
+  }
+
+  @extend .reset-outline !optional;
+
+  border: none;
+  background-color: inherit;
+  font-size: $fs-normal;
+
+  &:not([disabled]) {
+    cursor: pointer;
+  }
+
+  svg {
+    pointer-events: none;
+  }
+}

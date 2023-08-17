@@ -5,3 +5,64 @@
   @include typography;
   @include spacing;
 }
+
+.d-block {
+  display: block;
+  width: 100%;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-decoration {
+  text-decoration: underline;
+}
+
+.outline {
+  @include outline;
+}
+
+.hover-text-decoration {
+  &:hover {
+    @extend .text-decoration;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+//==========//
+//  Radius  //
+//==========//
+
+.rounded {
+  border-radius: $border-radius;
+}
+
+.rounded-sm {
+  border-radius: $border-radius-sm;
+}
+
+.rounded-lg {
+  border-radius: $border-radius-lg;
+}
+
+//==========//
+//  Resets  //
+//==========//
+
+.reset-outline {
+  outline-color: transparent;
+  outline-width: 0;
+}
+
+.reset-link {
+  color: inherit;
+  text-decoration: none;
+}

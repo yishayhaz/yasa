@@ -1,8 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./style.module.scss";
 
 export function Header() {
+  const location = useLocation();
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -11,7 +13,14 @@ export function Header() {
       <div className="flex-1">
         <ul>
           <li>
-            <Link to="/docs">Docs</Link>
+            <Link
+              to="/docs"
+              aria-current={
+                location.pathname.startsWith("/docs") ? "page" : undefined
+              }
+            >
+              Docs
+            </Link>
           </li>
         </ul>
       </div>

@@ -1,0 +1,35 @@
+.button {
+  @include flex;
+
+  border-radius: $border-radius;
+
+  &:not([data-link]) {
+    background-color: rgba(var(--p-accent));
+    color: var(--p-text-accent, $neutral-100);
+  }
+
+  &[data-link]:hover,
+  &[data-link]:focus-visible {
+    background-color: rgba(var(--p-accent));
+    color: $neutral-900;
+  }
+
+  line-height: 1em;
+  padding: 0.75rem;
+
+  font-weight: 600;
+  transition: background-color, opacity $normal-transition;
+
+  &:not([data-auto-width="true"]) {
+    width: 100%;
+  }
+
+  &:focus-visible {
+    @include shadow(rgba(var(--p-accent), 0.6));
+  }
+
+  &:disabled {
+    opacity: $disabled-opacity;
+    cursor: no-drop;
+  }
+}

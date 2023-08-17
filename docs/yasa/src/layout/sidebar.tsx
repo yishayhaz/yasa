@@ -6,6 +6,10 @@ type Link = { title: React.ReactNode; path: string };
 
 const GETTING_STARTED: Link[] = [
   {
+    title: "Overview 🔍",
+    path: "/docs/getting-started/overview",
+  },
+  {
     title: "Installation",
     path: "/docs/getting-started/installation",
   },
@@ -16,6 +20,10 @@ const GETTING_STARTED: Link[] = [
 ];
 
 const GENERAL: Link[] = [
+  {
+    title: "Overview 🔍",
+    path: "/docs/general/overview",
+  },
   {
     title: "Colors",
     path: "/docs/general/colors",
@@ -38,6 +46,14 @@ const COMPONENTS: Link[] = [
   {
     title: "Badge",
     path: "/docs/components/badge",
+  },
+  {
+    title: "Button",
+    path: "/docs/components/button",
+  },
+  {
+    title: "Input",
+    path: "/docs/components/input",
   },
 ];
 

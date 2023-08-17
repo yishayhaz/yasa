@@ -1,0 +1,44 @@
+.badge {
+  &[data-size="sm"] {
+    font-size: $fs-xs;
+    padding: 2px 6px;
+  }
+
+  &[data-size="md"] {
+    font-size: $fs-normal;
+    padding: 4px 8px;
+  }
+
+  &[data-size="lg"] {
+    font-size: $fs-ms;
+    padding: 6px 10px;
+  }
+
+  &[data-variant="primary"] {
+    --p-accent: var(--primary);
+  }
+  &[data-variant="neutral"] {
+    --p-accent: var(--s-neutral-300);
+    --p-text-accent: rgb(var(--s-neutral-text));
+  }
+  &[data-variant="success"] {
+    --p-accent: var(--success);
+  }
+  &[data-variant="danger"] {
+    --p-accent: var(--danger);
+  }
+  &[data-variant="warning"] {
+    --p-accent: var(--warning);
+    --p-text-accent: rgb(var(--neutral-text));
+  }
+
+  display: inline-block;
+  background-color: rgba(var(--p-accent));
+  color: var(--p-text-accent, $neutral-100);
+
+  @include shadow(
+    rgba(var(--p-accent, var(--primary))),
+    $spread: 0px,
+    $blur: 2px
+  );
+}
