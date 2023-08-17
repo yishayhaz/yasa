@@ -1,0 +1,123 @@
+.field {
+  display: flex;
+  flex-direction: column;
+
+  &[data-valid="true"] {
+    color: $primary;
+
+    .field__wrraper {
+      border-color: $primary;
+
+      button.field__icon {
+        background-color: $primary;
+      }
+
+      &:focus-within {
+        @include shadow(rgba(var(--primary), 0.2));
+      }
+    }
+  }
+
+  &[data-valid="false"]:not(:focus-within) {
+    color: $danger;
+
+    .field__wrraper {
+      border-color: $danger;
+
+      button.field__icon {
+        background-color: $danger;
+      }
+
+      &:focus-within {
+        @include shadow(rgba(var(--danger), 0.2));
+      }
+    }
+  }
+
+  &__wrraper {
+    display: flex;
+    align-items: stretch;
+
+    border: 1px solid $neutral;
+    border-radius: $border-radius;
+
+    transition: border-color $normal-transition;
+
+    button.field__icon {
+      border-start-end-radius: calc($border-radius - 2px);
+      border-end-end-radius: calc($border-radius - 2px);
+
+      @extend .reset-outline;
+
+      background-color: $neutral-700;
+      color: $neutral-100;
+
+      &:focus-visible {
+        scale: 1.2;
+        @include shadow($s-neutral-200);
+      }
+
+      & > * {
+        pointer-events: none;
+      }
+    }
+
+    &[aria-disabled] {
+      * {
+        cursor: no-drop;
+      }
+      background-color: $s-neutral-200;
+    }
+
+    &:not([aria-disabled]) {
+      background-color: $s-neutral-bg;
+    }
+
+    &:hover:not(:focus-within):not([aria-disabled]) {
+      border-color: $s-neutral-900;
+    }
+
+    &:focus-within {
+      @include shadow($s-neutral-400);
+    }
+
+    & > *:first-child {
+      width: 100%;
+      padding: 0.625rem 0.75rem;
+      color: $s-neutral-900;
+      background-color: inherit;
+    }
+
+    select,
+    input,
+    textarea {
+      @extend .reset-outline !optional;
+
+      font-size: $fs-normal;
+
+      border: none;
+      border-radius: $border-radius;
+
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active {
+        transition: background-color 5000s ease-in-out 0s;
+      }
+    }
+  }
+
+  &__label {
+    font-size: $fs-xs;
+    margin-bottom: 0.25rem;
+  }
+
+  &__title {
+    font-size: $fs-xs;
+  }
+
+  &__icon {
+    width: 45px;
+    @include flex;
+  }
+}

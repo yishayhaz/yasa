@@ -1,0 +1,97 @@
+@use "../abstracts" as *;
+
+:root {
+  @include theme;
+  @include typography;
+  @include spacing;
+}
+
+body[data-theme="light"] {
+  @include light-theme;
+  color-scheme: light;
+}
+
+body[data-theme="dark"] {
+  @include dark-theme;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not([data-theme]) {
+    @include dark-theme;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body:not([data-theme]) {
+    @include light-theme;
+  }
+}
+
+:where(.app *) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where(.app body) {
+  min-height: 100vh;
+
+  background-color: $s-neutral-bg;
+  color: $s-neutral-text;
+}
+
+:where(.app img),
+:where(.app picture),
+:where(.app svg),
+:where(.app video) {
+  display: block;
+  max-width: 100%;
+}
+
+.d-block {
+  display: block;
+  width: 100%;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-decoration {
+  text-decoration: underline;
+}
+
+.outline {
+  @include outline;
+}
+
+.hover-text-decoration {
+  &:hover {
+    @extend .text-decoration;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+//==========//
+//  Radius  //
+//==========//
+
+.rounded {
+  border-radius: $border-radius;
+}
+
+.rounded-sm {
+  border-radius: $border-radius-sm;
+}
+
+.rounded-lg {
+  border-radius: $border-radius-lg;
+}

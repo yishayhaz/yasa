@@ -12,7 +12,7 @@ export type BadgeProps = {
   size?: BadgeSizes;
   /** The roundness of the badge. */
   roundness?: BadgeRoudness;
-};
+} & React.HTMLAttributes<HTMLDivElement>;
 
 export type BadgeSizes = "sm" | "md" | "lg";
 

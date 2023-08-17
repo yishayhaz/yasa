@@ -12,6 +12,9 @@ import { HomeScreen } from "../screens/home";
 import { AlertScreen } from "../screens/alert";
 import { BadgeScreen } from "../screens/badge";
 import { ButtonScreen } from "../screens/button";
+import { FieldsScreen } from "../screens/fields";
+import { FiltersScreen } from "../screens/filters";
+import { FormScreen } from "../screens/form";
 
 export function Navigation() {
   return (
@@ -34,7 +37,13 @@ export function Navigation() {
             <Route path="alert" element={<AlertScreen />} />
             <Route path="badge" element={<BadgeScreen />} />
             <Route path="button" element={<ButtonScreen />} />
+            <Route path="fields" element={<FieldsScreen />} />
             <Route path="*" element={<Navigate to="overview" />} />
+          </Route>
+          <Route path="cool" element={<Outlet />}>
+            <Route path="overview" element={<HomeScreen />} />
+            <Route path="filters" element={<FiltersScreen />} />
+            <Route path="form" element={<FormScreen />} />
           </Route>
           <Route
             path="*"

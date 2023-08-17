@@ -29,6 +29,12 @@
   ul {
     list-style-type: none;
   }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
 }
 
 .content {

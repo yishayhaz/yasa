@@ -8,8 +8,8 @@ export function ButtonScreen() {
   const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <div className="d-flex gap-30 flex-column align-items-stretch">
-      <h1>This is the documentation for button</h1>
+    <>
+      <h1>Button</h1>
       <div className="d-flex flex-column gap-6 align-items-start">
         <h2>Base Button</h2>
         <BaseButton>Hello World</BaseButton>
@@ -91,6 +91,6 @@ export function ButtonScreen() {
           </IconButton>
         </div>
       </div>
-    </div>
+    </>
   );
 }

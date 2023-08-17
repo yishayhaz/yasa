@@ -52,8 +52,19 @@ const COMPONENTS: Link[] = [
     path: "/docs/components/button",
   },
   {
-    title: "Input",
-    path: "/docs/components/input",
+    title: "Fields",
+    path: "/docs/components/fields",
+  },
+];
+
+const COOL: Link[] = [
+  {
+    title: "Form",
+    path: "/docs/cool/form",
+  },
+  {
+    title: "Filters",
+    path: "/docs/cool/filters",
   },
 ];
 
@@ -92,6 +103,7 @@ export function Sidebar() {
       <MenuPart title="Getting Started" links={GETTING_STARTED} />
       <MenuPart title="General" links={GENERAL} />
       <MenuPart title="Components" links={COMPONENTS} />
+      <MenuPart title="Cool" links={COOL} />
     </nav>
   );
 }
