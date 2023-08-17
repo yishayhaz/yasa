@@ -1,6 +1,4 @@
 import { CodeBlock } from "docs/yasa/src/common/code_block";
-import { stripCode } from "docs/yasa/src/common/strip_code";
-import React from "react";
 
 export function SpacingScreen() {
   return (
