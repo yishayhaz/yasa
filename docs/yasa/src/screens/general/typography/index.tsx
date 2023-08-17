@@ -1,5 +1,3 @@
-import React from "react";
-
 const SIZES = ["xxl", "xl", "l", "ml", "m", "ms", "s", "xs", "xxs"];
 
 const WEIGHTS = [

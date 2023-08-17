@@ -25,7 +25,7 @@ export function BadgeScreen() {
               key={idx}
               variant={variant}
               size="lg"
-              title={idx * 10}
+              title={variant}
               roundness="lg"
             />
           )

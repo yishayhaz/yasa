@@ -1,6 +1,5 @@
 {
-  "name": "yasa",
-  "private": true,
+  "name": "yasa-ui",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

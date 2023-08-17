@@ -1,5 +1,3 @@
-import React from "react";
-
 export function InstallationScreen() {
   return (
     <>
