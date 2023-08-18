@@ -20,6 +20,32 @@
     font-weight: $fw-bold;
   }
 
+  .links {
+    flex: 1;
+
+    @include mobile {
+      opacity: 0;
+    }
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    @include tablet-and-desktop {
+      & > button:last-of-type {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      & > span {
+        display: none;
+      }
+    }
+  }
+
   & > *:not(.logo) a {
     color: $neutral-400;
     text-decoration: none;
@@ -32,12 +58,6 @@
 
   ul {
     list-style-type: none;
-  }
-
-  .actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
   }
 }
 
@@ -54,8 +74,32 @@
 }
 
 .sidebar {
-  padding-inline: var(--content-space-inline)
-    calc(var(--content-space-inline) / 2);
+  @include tablet-and-desktop {
+    padding-inline: var(--content-space-inline)
+      calc(var(--content-space-inline) / 2);
+  }
+
+  @include mobile {
+    position: absolute;
+    transition: left $normal-transition;
+
+    left: -100%;
+
+    &[aria-expanded="true"] {
+      left: 0;
+    }
+
+    overflow: auto;
+    max-height: calc(100vh - var(--header-height));
+
+    background-color: $s-neutral-bg;
+    box-shadow: 0 0 100px rgba(var(--s-neutral-600), 0.1);
+
+    h2,
+    ul {
+      padding-inline: 2rem;
+    }
+  }
 
   ul {
     list-style-type: none;
@@ -84,11 +128,16 @@
 }
 
 .main {
-  padding-inline-end: var(--content-space-inline);
+  @include tablet-and-desktop {
+    padding-inline: 10rem var(--content-space-inline);
+  }
+
+  @include mobile {
+    padding-inline: var(--content-space-inline);
+  }
 
   flex: 1;
   display: flex;
-  padding-inline: 10rem;
 
   flex-direction: column;
   gap: 2rem;

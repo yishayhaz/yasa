@@ -1,4 +1,5 @@
 import { Link } from "@yasa/link";
+import { Link as RouterLink } from "react-router-dom";
 
 export function GettingStartedOverviewScreen() {
   return (
@@ -22,6 +23,18 @@ export function GettingStartedOverviewScreen() {
         <p>
           I think it will be kinda hard to customize - I haven't really checked,
           because I created this library to suite my needs.
+        </p>
+        <h2>Are you looking for the cool stuff? 🔥</h2>
+        <p>
+          Yasa has some really dope features, jump to the{" "}
+          <Link
+            Component={RouterLink}
+            extraProps={{ to: "/docs/cool" }}
+            className="color-primary"
+          >
+            cool section
+          </Link>
+          .
         </p>
       </article>
     </>

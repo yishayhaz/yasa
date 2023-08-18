@@ -32,9 +32,13 @@ export const MenuPart = ({
   );
 };
 
-export function Sidebar() {
+export type SidebarProps = {
+  ariaExpanded?: boolean;
+};
+
+export function Sidebar({ ariaExpanded }: SidebarProps) {
   return (
-    <nav className={styles.sidebar}>
+    <nav className={styles.sidebar} aria-expanded={ariaExpanded}>
       {LINKS.map((link) => (
         <MenuPart key={link.title} {...link} />
       ))}

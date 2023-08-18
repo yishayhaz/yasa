@@ -3,12 +3,14 @@ import { Header } from "./header";
 import styles from "./style.module.scss";
 import { Sidebar } from "./sidebar";
 import { TbPlayerTrackPrevFilled } from "react-icons/tb";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ALL_LINKS } from "./data";
 
 export function Layout() {
   const location = useLocation();
   const navigate = useNavigate();
+
+  const [menuExpanded, setMenuExpanded] = useState(false);
 
   const prvAndNext = useMemo(() => {
     const idx = ALL_LINKS.findIndex((link) => link.path === location.pathname);
@@ -27,9 +29,9 @@ export function Layout() {
 
   return (
     <>
-      <Header />
+      <Header setMenuExpanded={setMenuExpanded} menuExpanded={menuExpanded} />
       <div className={styles.content}>
-        <Sidebar />
+        <Sidebar ariaExpanded={menuExpanded} />
         <main className={styles.main}>
           <Outlet />
           <footer>

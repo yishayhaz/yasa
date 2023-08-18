@@ -4,8 +4,15 @@ import { IconButton } from "@yasa/button";
 import { FiSun, FiMoon } from "react-icons/fi";
 import { BsGithub } from "react-icons/bs";
 import { useTheme } from "../providers/theme";
+import { CgMenuRight } from "react-icons/cg";
+import { IoMdClose } from "react-icons/io";
 
-export function Header() {
+export type HeaderProps = {
+  menuExpanded: boolean;
+  setMenuExpanded: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export function Header({ setMenuExpanded, menuExpanded }: HeaderProps) {
   const location = useLocation();
   const theme = useTheme();
 
@@ -14,7 +21,7 @@ export function Header() {
       <div className={styles.logo}>
         <Link to="/">Yasa</Link>
       </div>
-      <div className="flex-1">
+      <div className={styles.links}>
         <ul>
           <li>
             <Link
@@ -53,6 +60,14 @@ export function Header() {
           size="sm"
         >
           {theme.theme === "light" ? <FiMoon /> : <FiSun />}
+        </IconButton>
+        <IconButton
+          label="menu"
+          size="sm"
+          variant="link"
+          onClick={() => setMenuExpanded((p) => !p)}
+        >
+          {menuExpanded ? <IoMdClose /> : <CgMenuRight />}
         </IconButton>
       </div>
     </header>

@@ -40,6 +40,7 @@ export function Navigation() {
             <Route path="overview" element={<GettingStartedOverviewScreen />} />
             <Route path="installation" element={<InstallationScreen />} />
             <Route path="setup" element={<SetupScreen />} />
+            <Route path="" element={<Navigate to="overview" />} />
             <Route path="*" element={<Navigate to="overview" />} />
           </Route>
           <Route path="general" element={<Outlet />}>
@@ -49,6 +50,7 @@ export function Navigation() {
             <Route path="layout" element={<LayoutScreen />} />
             <Route path="typography" element={<TypographyScreen />} />
             <Route path="spacing" element={<SpacingScreen />} />
+            <Route path="" element={<Navigate to="overview" />} />
             <Route path="*" element={<Navigate to="overview" />} />
           </Route>
           <Route path="components" element={<Outlet />}>
@@ -66,6 +68,7 @@ export function Navigation() {
               path="table-and-pagination"
               element={<TableAndPaginationScreen />}
             />
+            <Route path="" element={<Navigate to="overview" />} />
             <Route path="*" element={<Navigate to="overview" />} />
           </Route>
           <Route path="cool" element={<Outlet />}>
@@ -74,6 +77,8 @@ export function Navigation() {
             <Route path="form" element={<FormScreen />} />
             <Route path="pagination" element={<PaginationScreen />} />
             <Route path="api-hooks" element={<ApiHooksScreen />} />
+            <Route path="" element={<Navigate to="overview" />} />
+            <Route path="*" element={<Navigate to="overview" />} />
           </Route>
           <Route
             path="*"
