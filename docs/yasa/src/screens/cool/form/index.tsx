@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Form } from "@yasa/form";
+import { Formy } from "@yasa/form";
 import { CodeBlock } from "docs/yasa/src/common/code_block";
 import code from "./code?raw";
 import { stripCode } from "docs/yasa/src/common/strip_code";
 
 const scope = {
   useState,
-  Form,
+  Formy,
 };
 
 export function FormScreen() {

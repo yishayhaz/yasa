@@ -22,6 +22,8 @@ import { GeneralOverviewScreen } from "../screens/general/overview";
 import { ComponentsOverviewScreen } from "../screens/components/overview";
 import { CoolOverviewScreen } from "../screens/cool/overview";
 import { SpacingScreen } from "../screens/general/spacing";
+import { BreakpointsScreen } from "../screens/general/breakpoints";
+import { RadioAndCheckbox } from "../screens/components/radio_and_checkbox";
 
 export function Navigation() {
   return (
@@ -37,6 +39,7 @@ export function Navigation() {
           </Route>
           <Route path="general" element={<Outlet />}>
             <Route path="overview" element={<GeneralOverviewScreen />} />
+            <Route path="breakpoints" element={<BreakpointsScreen />} />
             <Route path="colors" element={<ColorsScreen />} />
             <Route path="typography" element={<TypographyScreen />} />
             <Route path="spacing" element={<SpacingScreen />} />
@@ -48,6 +51,7 @@ export function Navigation() {
             <Route path="badge" element={<BadgeScreen />} />
             <Route path="button" element={<ButtonScreen />} />
             <Route path="fields" element={<FieldsScreen />} />
+            <Route path="radio-and-checkbox" element={<RadioAndCheckbox />} />
             <Route path="*" element={<Navigate to="overview" />} />
           </Route>
           <Route path="cool" element={<Outlet />}>

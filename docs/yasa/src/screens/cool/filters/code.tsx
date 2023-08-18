@@ -1,5 +1,5 @@
 import { Button } from "@yasa/button";
-import { Input, Select } from "@yasa/field";
+import { Input, Select, Checkbox, Radio } from "@yasa/form";
 import { useFilters } from "@yasa/hooks/filters";
 import { CodeBlock } from "docs/yasa/src/common/code_block";
 
@@ -14,6 +14,8 @@ export function Filters() {
       to: "date",
       include: "boolean",
       status: "string",
+      onlyFree: "boolean",
+      onlyAbove18: "boolean",
     },
     console.log
   );
@@ -66,6 +68,41 @@ export function Filters() {
           min={filters.asValues.from}
           type="date"
           label="To"
+        />
+      </div>
+      <div>
+        <Radio
+          label="yes"
+          value="true"
+          name="include"
+          onChange={(e) => filters.onChange("include", e.target.value)}
+        />
+        <Radio
+          label="no"
+          value="false"
+          name="include"
+          onChange={(e) => filters.onChange("include", e.target.value)}
+        />
+        <Radio
+          label="ignore"
+          value=""
+          name="include"
+          onChange={(e) => filters.onChange("include", e.target.value)}
+          defaultChecked
+        />
+        <Checkbox
+          id="onlyFree"
+          label="Only Free"
+          name="onlyFree"
+          checked={filters.asValues.onlyFree === "true"}
+          onChange={(v) => filters.onChange("onlyFree", v ? "true" : "")}
+        />
+        <Checkbox
+          id="onlyAbove18"
+          label="Only Above 18"
+          name="onlyAbove18"
+          checked={filters.asValues.onlyAbove18 === "true"}
+          onChange={(v) => filters.onChange("onlyAbove18", v ? "true" : "")}
         />
       </div>
       <div className="d-flex flex-start gap-10">

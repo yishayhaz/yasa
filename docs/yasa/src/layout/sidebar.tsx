@@ -25,24 +25,24 @@ const GENERAL: Link[] = [
     path: "/docs/general/overview",
   },
   {
+    title: "Breakpoints",
+    path: "/docs/general/breakpoints",
+  },
+  {
     title: "Colors",
     path: "/docs/general/colors",
-  },
-  {
-    title: "Typography",
-    path: "/docs/general/typography",
-  },
-  {
-    title: "Spacing",
-    path: "/docs/general/spacing",
   },
   {
     title: "Layout",
     path: "/docs/general/layout",
   },
   {
-    title: "Breakpoints",
-    path: "/docs/general/breakpoints",
+    title: "Spacing",
+    path: "/docs/general/spacing",
+  },
+  {
+    title: "Typography",
+    path: "/docs/general/typography",
   },
 ];
 
@@ -66,6 +66,26 @@ const COMPONENTS: Link[] = [
   {
     title: "Fields",
     path: "/docs/components/fields",
+  },
+  {
+    title: "Radio and Checkbox",
+    path: "/docs/components/radio-and-checkbox",
+  },
+  {
+    title: "Popup",
+    path: "/docs/components/popup",
+  },
+  {
+    title: "Dialog",
+    path: "/docs/components/dialog",
+  },
+  {
+    title: "Table",
+    path: "/docs/components/table",
+  },
+  {
+    title: "Pagination",
+    path: "/docs/components/pagination",
   },
 ];
 

@@ -1,0 +1,52 @@
+// inspired by https://getbootstrap.com/docs/5.0/layout/breakpoints/
+
+/*
+  ? So, what's going on here?
+
+  * our application has 3 breakpoints (only):
+  - mobile: 0 - 767px
+  - tablet: 768px - 1199px
+  - desktop: 1200px and up
+
+  * we have 5 mixins:
+  - mobile: for mobile only (0 - 767px)
+  - tablet-and-mobile: for tablet and mobile (0 - 1199px)
+  - tablet: for tablet and mobile (0 - 1199px)
+  - tablet-and-desktop: for tablet and desktop (768px and up)
+  - desktop: for desktop only (1200px and up)
+
+  Note: this file should be in sync with the useDevice hook at src/providers/device/index.js
+*/
+
+$bp-sm: 768px;
+$bp-md: 1200px;
+
+@mixin mobile() {
+  @media (width < $bp-sm) {
+    @content;
+  }
+}
+
+@mixin tablet-and-mobile {
+  @media (width < $bp-md) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media (width < $bp-md) and (width >= $bp-sm) {
+    @content;
+  }
+}
+
+@mixin tablet-and-desktop {
+  @media (width >= $bp-sm) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media (width >= $bp-md) {
+    @content;
+  }
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./style.module.scss";
-import { BaseButton } from "../../button/base";
-import { Spinner } from "../../spinner";
+import { BaseButton } from "../../../button/base";
+import { Spinner } from "../../../spinner";
 
 export type BaseFieldProps = {
   icon?: React.ReactNode;

@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Form, FormErrors, FormFields, FormOnSubmit } from "@yasa/form";
+import { Formy, FormyErrors, FormyFields, FormyOnSubmit } from "@yasa/form";
 
 // @end imports@ //
 
 export function FormScreen() {
-  const [fields, setFields] = useState<FormFields>({
+  const [fields, setFields] = useState<FormyFields>({
     status: {
       as: "select",
       field: {
@@ -89,9 +89,9 @@ export function FormScreen() {
       },
     },
   });
-  const [formErrors, setFormErrors] = useState<FormErrors>({});
+  const [formErrors, setFormErrors] = useState<FormyErrors>({});
 
-  const handleSubmit: FormOnSubmit = (doc) => {
+  const handleSubmit: FormyOnSubmit = (doc) => {
     if (Math.random() > 0.5) {
       setFormErrors({
         name: "Name is already taken",
@@ -104,7 +104,7 @@ export function FormScreen() {
   };
 
   return (
-    <Form
+    <Formy
       className="d-flex gap-12 flex-column align-items-stretch"
       fields={fields}
       setFields={setFields}

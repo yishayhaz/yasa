@@ -1,4 +1,4 @@
-import { BaseField, Input, Select, Textarea } from "@yasa/field";
+import { BaseField, Input, Select, Textarea } from "@yasa/form/fields";
 import { BiSearch } from "react-icons/bi";
 import { Badge } from "@yasa/badge";
 

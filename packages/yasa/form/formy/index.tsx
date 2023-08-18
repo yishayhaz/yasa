@@ -4,7 +4,10 @@
 */
 
 import React, { useEffect, useMemo } from "react";
-import { Form as PrimitiveForm, FormProps as PrimitiveFormProps } from "./form";
+import {
+  Form as PrimitiveForm,
+  FormProps as PrimitiveFormProps,
+} from "../form";
 import {
   Input,
   InputProps,
@@ -12,51 +15,51 @@ import {
   TextareaProps,
   Select,
   SelectProps,
-} from "../field";
-import { Button, ButtonProps } from "../button/button";
-import { AnyObject } from "../types";
-import { deepClone } from "../utils/deepClone";
+} from "../fields";
+import { Button, ButtonProps } from "../../button/button";
+import { AnyObject } from "../../types";
+import { deepClone } from "../../utils/deepClone";
 
-export type FormProps = {
-  onSubmit: FormOnSubmit;
-  fields: FormFields;
-  setFields: React.Dispatch<React.SetStateAction<FormFields>>;
-  errors?: FormErrors;
-  setErrors?: React.Dispatch<React.SetStateAction<FormErrors>>;
+export type FormyProps = {
+  onSubmit: FormyOnSubmit;
+  fields: FormyFields;
+  setFields: React.Dispatch<React.SetStateAction<FormyFields>>;
+  errors?: FormyErrors;
+  setErrors?: React.Dispatch<React.SetStateAction<FormyErrors>>;
   buttonLabel?: string;
   buttonProps?: Omit<ButtonProps, "link" | "onClick" | "disabled">;
   children?: [React.ReactNode, React.ReactNode];
-  initialValues?: FormInitialValues;
+  initialValues?: FormyInitialValues;
   /*
     ! initialValues MUST be a useMemo
   */
   isDisabled?: (internalDisabled: boolean) => boolean | undefined | null;
 } & Omit<PrimitiveFormProps, "onSubmit">;
 
-export type FormErrors = { [key: string]: string };
+export type FormyErrors = { [key: string]: string };
 
-export type FormOnSubmit = (
-  data: { [key: string]: FormFieldValue },
-  fields: FormFields,
+export type FormyOnSubmit = (
+  data: { [key: string]: FormyFieldValue },
+  fields: FormyFields,
   e: React.FormEvent<HTMLFormElement>
 ) => void;
 
-export type FormFieldValue =
+export type FormyFieldValue =
   | string
   | number
   | readonly string[]
   | undefined
   | null;
 
-export type FormFields = { [key: string]: FormField };
+export type FormyFields = { [key: string]: FormyField };
 
-export type FormInitialValues = {
+export type FormyInitialValues = {
   [key: string]: string | number | undefined | null;
 };
 
-export type FormField = {
+export type FormyField = {
   as: "input" | "textarea" | "select";
-  validation?: FormValidation[];
+  validation?: FormyValidation[];
   nullWhenEmpty?: boolean; // only meant for string fields!
   field: Omit<
     InputProps,
@@ -66,10 +69,10 @@ export type FormField = {
       TextareaProps,
       "onChange" | "pattern" | "name" | "onClick" | "isValid"
     > &
-    FormFieldSelect;
+    FormyFieldSelect;
 };
 
-export type FormFieldSelect = Omit<
+export type FormyFieldSelect = Omit<
   SelectProps,
   "onChange" | "pattern" | "name" | "onClick" | "isValid" | "children"
 > & {
@@ -81,17 +84,17 @@ export type FormFieldSelect = Omit<
   }[];
 };
 
-export type FormValidation = {
+export type FormyValidation = {
   pattern?: RegExp;
-  validate?: FormFieldValidate;
+  validate?: FormyFieldValidate;
   message: string;
 };
 
-export type FormFieldValidate = (
+export type FormyFieldValidate = (
   value: string | number | readonly string[] | undefined
 ) => boolean | null;
 
-export function Form({
+export function Formy({
   onSubmit,
   fields,
   buttonLabel = "Submit",
@@ -103,7 +106,7 @@ export function Form({
   errors,
   setErrors,
   ...rest
-}: FormProps) {
+}: FormyProps) {
   const handleIsValid = (name: string) => {
     const field = fields[name];
 
@@ -143,7 +146,7 @@ export function Form({
     >
   ) => {
     const name = e.target.name;
-    let value: FormFieldValue = e.target.value;
+    let value: FormyFieldValue = e.target.value;
 
     const newFields = { ...fields };
     const field = newFields[name];
@@ -171,7 +174,7 @@ export function Form({
     const data: AnyObject = {};
 
     for (const [name, field] of Object.entries(fields)) {
-      let value: FormFieldValue = field.field.value;
+      let value: FormyFieldValue = field.field.value;
 
       // only send changed values
       if (initialValues && initialValues[name] === value) continue;
