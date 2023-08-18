@@ -80,10 +80,8 @@ export function Navigation() {
             <Route path="" element={<Navigate to="overview" />} />
             <Route path="*" element={<Navigate to="overview" />} />
           </Route>
-          <Route
-            path="*"
-            element={<Navigate to="getting-started/overview" />}
-          />
+          <Route path="" element={<Navigate to="getting-started" />} />
+          <Route path="*" element={<Navigate to="getting-started" />} />
         </Route>
       </Routes>
     </Router>

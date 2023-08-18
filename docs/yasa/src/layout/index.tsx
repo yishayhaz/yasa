@@ -1,4 +1,4 @@
-import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import { Header } from "./header";
 import styles from "./style.module.scss";
 import { Sidebar } from "./sidebar";
@@ -8,7 +8,6 @@ import { ALL_LINKS } from "./data";
 
 export function Layout() {
   const location = useLocation();
-  const navigate = useNavigate();
 
   const [menuExpanded, setMenuExpanded] = useState(false);
 
@@ -22,9 +21,7 @@ export function Layout() {
   }, [location.pathname]);
 
   useEffect(() => {
-    if (location.pathname === "/docs") {
-      navigate("/docs/getting-started/overview");
-    }
+    setMenuExpanded(false);
   }, [location.pathname]);
 
   return (
