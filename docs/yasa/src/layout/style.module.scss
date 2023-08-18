@@ -92,4 +92,57 @@
 
   flex-direction: column;
   gap: 2rem;
+
+  footer {
+    display: flex;
+    gap: 2rem;
+
+    div {
+      width: calc(50% - 1rem);
+    }
+
+    & > a {
+      width: calc(50% - 1rem);
+      padding: 1rem 1.5rem;
+      border-radius: $border-radius-lg;
+      box-shadow: 0 0 2px $neutral-200;
+
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      cursor: pointer;
+
+      text-decoration: none;
+
+      span {
+        color: $s-neutral-text;
+      }
+
+      b {
+        color: $primary;
+        text-decoration: underline;
+
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        svg {
+          width: 12px;
+        }
+      }
+
+      &:hover {
+        box-shadow: 0 0 4px $primary;
+      }
+
+      &[aria-label="next"] {
+        align-items: flex-end;
+
+        svg {
+          rotate: 180deg;
+        }
+      }
+    }
+  }
 }

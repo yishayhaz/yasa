@@ -1,9 +1,10 @@
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from "react-live";
 import { themes } from "prism-react-renderer";
 import { useTheme } from "../../providers/theme";
+import { useMemo } from "react";
 
 export type CodeBlockProps = {
-  code: string;
+  code: string | string[];
   scope?: Record<string, unknown>;
   language?: string;
   disabled?: boolean;
@@ -20,9 +21,21 @@ export function CodeBlock({
   noInline,
 }: CodeBlockProps) {
   const theme = useTheme();
+
+  const _code = useMemo(() => {
+    if (Array.isArray(code)) {
+      return code
+        .map((l) => l.trim())
+        .join("\n")
+        .trim();
+    }
+
+    return code;
+  }, [code]);
+
   return (
     <LiveProvider
-      code={code}
+      code={_code}
       scope={scope}
       disabled={disabled}
       language={language}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId } from "react";
 
 export type RadioProps = {
   label?: string | React.ReactNode;
@@ -12,7 +12,9 @@ export type RadioVariant =
   | "danger"
   | "warning";
 
-export function Radio({ label, id, variant, ...rest }: RadioProps) {
+export function Radio({ label, variant, ...rest }: RadioProps) {
+  const id = useId();
+
   const pAccent = React.useMemo(() => {
     const _variant = variant === "neutral" ? "s-neutral-900" : variant;
     return `rgba(var(--${_variant}, var(--primary)))`;
@@ -23,13 +25,13 @@ export function Radio({ label, id, variant, ...rest }: RadioProps) {
       <input
         {...rest}
         type="radio"
-        id={id}
+        id={rest.id || id}
         style={{
           accentColor: pAccent,
         }}
       />
       {Boolean(label) && (
-        <label htmlFor={id} className="fs-xs">
+        <label htmlFor={rest.id || id} className="fs-xs cursor-pointer">
           {label}
         </label>
       )}

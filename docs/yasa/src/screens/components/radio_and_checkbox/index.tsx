@@ -1,19 +1,13 @@
+import { Checkbox, Radio } from "@yasa/form";
+import code from "./code?raw";
 import { CodeBlock } from "docs/yasa/src/common/code_block";
-import React from "react";
+import { stripCode } from "docs/yasa/src/common/strip_code";
 
-export function RadioAndCheckbox() {
-  return (
-    <>
-      <h1>Radio and Checkbox</h1>
-      <h2>Usage</h2>
-      <CodeBlock
-        code="import { Radio, Checkbox } from 'yasa-ui/form';"
-        disabled
-        noPreview
-      />
-      <h2>Customization</h2>
-      <h2>Accesiablity</h2>
-      <h2>API</h2>
-    </>
-  );
+const scope = {
+  Checkbox,
+  Radio,
+};
+
+export function RadioAndCheckboxScreen() {
+  return <CodeBlock code={stripCode(code)} scope={scope} />;
 }

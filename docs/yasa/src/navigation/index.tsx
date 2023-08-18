@@ -23,7 +23,10 @@ import { ComponentsOverviewScreen } from "../screens/components/overview";
 import { CoolOverviewScreen } from "../screens/cool/overview";
 import { SpacingScreen } from "../screens/general/spacing";
 import { BreakpointsScreen } from "../screens/general/breakpoints";
-import { RadioAndCheckbox } from "../screens/components/radio_and_checkbox";
+import { RadioAndCheckboxScreen } from "../screens/components/radio_and_checkbox";
+import { LayoutScreen } from "../screens/general/layout";
+import { TableAndPaginationScreen } from "../screens/components/table_and_pagination";
+import { PopupAndDialogScreen } from "../screens/components/popup_and_dialog";
 
 export function Navigation() {
   return (
@@ -41,6 +44,7 @@ export function Navigation() {
             <Route path="overview" element={<GeneralOverviewScreen />} />
             <Route path="breakpoints" element={<BreakpointsScreen />} />
             <Route path="colors" element={<ColorsScreen />} />
+            <Route path="layout" element={<LayoutScreen />} />
             <Route path="typography" element={<TypographyScreen />} />
             <Route path="spacing" element={<SpacingScreen />} />
             <Route path="*" element={<Navigate to="overview" />} />
@@ -51,7 +55,15 @@ export function Navigation() {
             <Route path="badge" element={<BadgeScreen />} />
             <Route path="button" element={<ButtonScreen />} />
             <Route path="fields" element={<FieldsScreen />} />
-            <Route path="radio-and-checkbox" element={<RadioAndCheckbox />} />
+            <Route
+              path="radio-and-checkbox"
+              element={<RadioAndCheckboxScreen />}
+            />
+            <Route path="popup-and-dialog" element={<PopupAndDialogScreen />} />
+            <Route
+              path="table-and-pagination"
+              element={<TableAndPaginationScreen />}
+            />
             <Route path="*" element={<Navigate to="overview" />} />
           </Route>
           <Route path="cool" element={<Outlet />}>

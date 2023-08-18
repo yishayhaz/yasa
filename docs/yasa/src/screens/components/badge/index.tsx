@@ -1,36 +1,12 @@
 import { Badge } from "@yasa/badge";
+import code from "./code?raw";
+import { CodeBlock } from "docs/yasa/src/common/code_block";
+import { stripCode } from "docs/yasa/src/common/strip_code";
+
+const scope = {
+  Badge,
+};
 
 export function BadgeScreen() {
-  return (
-    <>
-      <h1>Badge</h1>
-      <div className="d-flex flex-start gap-10">
-        {(["primary", "success", "danger", "warning", "neutral"] as const).map(
-          (variant, idx) => (
-            <Badge key={idx} variant={variant} size="sm" title={variant} />
-          )
-        )}
-      </div>
-      <div className="d-flex flex-start gap-10">
-        {(["primary", "success", "danger", "warning", "neutral"] as const).map(
-          (variant, idx) => (
-            <Badge key={idx} variant={variant} size="md" title={variant} />
-          )
-        )}
-      </div>
-      <div className="d-flex flex-start gap-10">
-        {(["primary", "success", "danger", "warning", "neutral"] as const).map(
-          (variant, idx) => (
-            <Badge
-              key={idx}
-              variant={variant}
-              size="lg"
-              title={variant}
-              roundness="lg"
-            />
-          )
-        )}
-      </div>
-    </>
-  );
+  return <CodeBlock code={stripCode(code)} scope={scope} />;
 }
