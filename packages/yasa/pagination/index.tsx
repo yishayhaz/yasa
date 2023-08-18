@@ -1,6 +1,6 @@
-import { IconButton } from "../icon-button";
-import { PaginationButtonValue, usePagination } from "./hook";
-import { isRtl } from "shoppa-utils/window";
+import { IconButton } from "../button/icon";
+import { PaginationButtonValue, usePagination } from "../hooks/pagination";
+import { isRtl } from "../utils/window";
 
 export type PaginationProps = {
   page: number;

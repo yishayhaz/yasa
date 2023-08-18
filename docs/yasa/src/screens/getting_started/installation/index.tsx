@@ -9,7 +9,7 @@ export function InstallationScreen() {
         <br />
         Yasa uses Sass, so you will need to install it as well.
       </p>
-      <CodeBlock code="npm i -D sass && npm i yasa" disabled noPreview />
+      <CodeBlock code="npm i -D sass && npm i yasa-ui" disabled noPreview />
     </article>
   );
 }

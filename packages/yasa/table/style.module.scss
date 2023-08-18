@@ -1,0 +1,52 @@
+.table__wrraper {
+  overflow: auto;
+  max-width: 100%;
+
+  table {
+    width: 100%;
+
+    .table__headCell {
+      button {
+        display: flex;
+        align-items: center;
+
+        font-weight: 600;
+
+        @include outline;
+      }
+
+      &[aria-sort="ascending"] svg {
+        transform: rotate(180deg);
+      }
+
+      svg {
+        width: 18px;
+        height: 18px;
+        color: $s-neutral-800;
+      }
+
+      &:not([aria-sort]) svg {
+        opacity: 0;
+      }
+    }
+
+    thead {
+      background-color: $s-neutral-200;
+    }
+
+    tbody tr:not(:first-child) td {
+      border-top: 1px solid $s-neutral-300;
+    }
+
+    tr:hover {
+      background-color: rgb(var(--s-neutral-200), 0.6);
+    }
+
+    th,
+    td {
+      text-align: start;
+      white-space: nowrap;
+      padding: 0.5rem 1rem;
+    }
+  }
+}

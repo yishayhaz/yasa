@@ -27,6 +27,8 @@ import { RadioAndCheckboxScreen } from "../screens/components/radio_and_checkbox
 import { LayoutScreen } from "../screens/general/layout";
 import { TableAndPaginationScreen } from "../screens/components/table_and_pagination";
 import { PopupAndDialogScreen } from "../screens/components/popup_and_dialog";
+import { PaginationScreen } from "../screens/cool/pagination";
+import { ApiHooksScreen } from "../screens/cool/api_hooks";
 
 export function Navigation() {
   return (
@@ -70,6 +72,8 @@ export function Navigation() {
             <Route path="overview" element={<CoolOverviewScreen />} />
             <Route path="filters" element={<FiltersScreen />} />
             <Route path="form" element={<FormScreen />} />
+            <Route path="pagination" element={<PaginationScreen />} />
+            <Route path="api-hooks" element={<ApiHooksScreen />} />
           </Route>
           <Route
             path="*"

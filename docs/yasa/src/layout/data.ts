@@ -90,6 +90,14 @@ export const COOL: NavLink[] = [
     title: "Filters",
     path: "/docs/cool/filters",
   },
+  {
+    title: "Pagination",
+    path: "/docs/cool/pagination",
+  },
+  {
+    title: "API Hooks",
+    path: "/docs/cool/api-hooks",
+  },
 ];
 
 export const LINKS = [

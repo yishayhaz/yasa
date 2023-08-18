@@ -1,13 +1,14 @@
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Header } from "./header";
 import styles from "./style.module.scss";
 import { Sidebar } from "./sidebar";
 import { TbPlayerTrackPrevFilled } from "react-icons/tb";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { ALL_LINKS } from "./data";
 
 export function Layout() {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const prvAndNext = useMemo(() => {
     const idx = ALL_LINKS.findIndex((link) => link.path === location.pathname);
@@ -16,6 +17,12 @@ export function Layout() {
       prev: ALL_LINKS[idx - 1],
       next: ALL_LINKS[idx + 1],
     };
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (location.pathname === "/docs") {
+      navigate("/docs/getting-started/overview");
+    }
   }, [location.pathname]);
 
   return (
