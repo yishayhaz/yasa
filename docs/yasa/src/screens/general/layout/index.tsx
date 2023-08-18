@@ -1,5 +1,4 @@
 import { CodeBlock } from "docs/yasa/src/common/code_block";
-import React from "react";
 
 export function LayoutScreen() {
   return (
